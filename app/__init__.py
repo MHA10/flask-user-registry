@@ -1,14 +1,15 @@
 import os
 from flask import Flask
-from datetime import timedelta
 from flask_mail import Mail
+from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
+from datetime import timedelta
 from dotenv import load_dotenv
 
 load_dotenv()
 
 app = Flask(__name__)
-
+CORS(app)
 
 # Email config settings
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'

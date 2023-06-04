@@ -1,13 +1,13 @@
 import jwt as pyjwt
 
 import utils
-from dbms import app, db
+from app import app, db
 from flask_migrate import Migrate
 import datetime
 
 from flask import make_response, request, render_template, jsonify, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
-from dbms.models import user as userModel
+from app.dbms.models import user as userModel
 from flask_jwt_extended import create_access_token, \
     get_jwt_identity, jwt_required, \
     JWTManager, current_user, \

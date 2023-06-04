@@ -1,14 +1,14 @@
 import os
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 from datetime import timedelta
 from flask_mail import Mail
-
+from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
 
 load_dotenv()
 
 app = Flask(__name__)
+
 
 # Email config settings
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -26,4 +26,5 @@ app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=4)
 app.config["JWT_REFRESH_TOKEN_EXPIRES"] = timedelta(days=1)
 app.config["JWT_COOKIE_CSRF_PROTECT"] = False
 app.config["WTF_CSRF_ENABLED"] = True
+
 db = SQLAlchemy(app)

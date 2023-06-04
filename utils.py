@@ -1,7 +1,7 @@
 import re
 from flask import request
 import jwt
-from dbms import app
+from app import app
 
 
 # function for validating an Email
